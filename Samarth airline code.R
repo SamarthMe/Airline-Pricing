@@ -178,11 +178,6 @@ model.forest <- randomForest(PRICE_PREMIUM~ PITCH_PREMIUM + WIDTH_PREMIUM + FLIG
 varImpPlot(model.forest)
 #From the VIF plot we see that Flight Duration and Price Relative are most important factors in predicitng Price Economy.
 
-#We test the model using Random Forest
-prediction <- predict(model.forest,Test)
-rmse2 <- sqrt(mean((log(prediction)-log(Test$PRICE_PREMIUM)^2))
-round(rmse2, digits = 3)
-
 # Evaluation metric function
 #A custom root mean Square Function to evaluate the performance of our model
 RMSE <- function(x,y)
